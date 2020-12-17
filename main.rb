@@ -40,4 +40,8 @@ request.body = 'buttonSelect=2&wantype=static&enable_apmode=0'
 
 # output response
 response = http.request request
-puts response
+if response.code.eql? '200'
+  puts '200: Success'
+else
+  puts "HTTP Response Code: #{response.code}"
+end
